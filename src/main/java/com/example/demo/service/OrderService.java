@@ -14,7 +14,7 @@ public class OrderService {
     }
 
     public Order placeOrder(Order order) {
+        order.setStatus("PLACED");
         return orderRepository.save(order);
     }
 }
-

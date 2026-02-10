@@ -9,7 +9,9 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @ManyToOne
+    private Food food;
+    private String status;
     private String foodName;
     private int quantity;
     private double totalPrice;
@@ -47,4 +49,21 @@ public class Order {
     public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
+
+    public String setStatus(String placed) {
+        return placed;
+    }
+
+    public Food getFood() {
+        return food;
+    }
+
+    public void setFood(Food food) {
+        this.food = food;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
 }
